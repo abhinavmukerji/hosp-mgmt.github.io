@@ -1,0 +1,35 @@
+<!--by Abhinav Mukerji(EN18CS301006)-->
+{% include 'base.html' %}
+{% include 'navigation.html' %}
+{% block content %}
+
+{% ifequal error "no" %}
+<script>
+	alert('Record Saved!');
+	window.location="{% url 'view_patient' %}";
+</script>
+{% endifequal %}
+
+{% ifequal error "yes" %}
+<script>
+	alert('Couldn't save please check again!');
+</script>
+{% endifequal %}
+<div class="container">
+	<h2 class="text-center"><div class="shadow-lg p-3 mb-5 bg-body rounded"><b>Add Patient <i class="fas fa-plus-square"></i></b></div></h2>
+	<form method="POST">
+		{% csrf_token %}
+		<label><b>Patient Name</b></label>
+		<input type="text" class="form-control" name="uname" />
+		<label><b>Gender</b></label>
+		<input type="text" class="form-control" name="gender" />
+		<label><b>Mobile</b></label>
+		<input type="text" class="form-control" name="mobile" />
+		<label><b>Address</b></label>
+		<input type="text" class="form-control" name="address" />
+		<br>
+		<input type="submit" value="submit" class="form-control btn btn-primary">
+	<form>
+</div>
+
+{% endblock content %}

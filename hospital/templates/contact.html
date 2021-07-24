@@ -1,0 +1,36 @@
+<!--by Abhinav Mukerji(EN18CS301006)-->
+{% include 'base.html' %}
+{% include 'navigation.html' %}
+<style>
+	.mydivstyle:hover{
+	box-shadow:0 0 20px 0 rgba(0,0,0,0.3);
+	transform: translateY(-20px);
+	}
+</style>
+
+{% block content %}
+ <div class="container" style="margin-top: 50px;">
+   <h1 class="text-center">Contact Us <i class="fas fa-phone-square"></i></h1>
+   <div class="container-fluid">
+    <img src="https://source.unsplash.com/1000x400/?contact,24*7" class="d-block w-100" alt="loading...">
+   </div>
+   <div class="row mt-5 text-center">
+     <div class="col-lg-3 col-sm-6 mydivstyle">
+       <h4><i class="fas fa-phone-square"> Contact</i></h4>
+       <p class="text-danger font-weight-bold mt-3"><a href="tel:+9179000342">+9179000342</a></p>
+     </div>
+     <div class="col-lg-3 col-sm-6 mydivstyle">
+       <h4><i class="fas fa-envelope-open-text"></i> Send-email</h4>
+       <p class="font-weight-bold mt-3"><a href="mailto:amukerji29@gmail.com">amukerji29@gmail.com</a></p>
+     </div>
+     <div class="col-lg-3 col-sm-6 mydivstyle">
+       <h4><i class="fas fa-map-marked-alt" aria-hidden="true"></i> Office Address</h4>
+       <p class="font-weight-bold mt-3"><a href="https://www.google.co.in/maps/place/Laxmi+Nagar,+Desai+Nagar,+Ujjain,+Madhya+Pradesh/@23.1812898,75.8006154,17z/data=!3m1!4b1!4m5!3m4!1s0x396374746214d017:0xbb504614451e1e86!8m2!3d23.1813364!4d75.8029966">Laxmi Nagar,Ujjain</a></p>
+     </div>
+     <div class="col-lg-3 col-sm-6 mydivstyle">
+       <h4><i class="fas fa-business-time" aria-hidden="true"></i> Office Time</h4>
+       <p class="font-weight-bold mt-3">10AM to 7PM</p>
+     </div>
+   </div> 
+ </div>
+{% endblock content %}

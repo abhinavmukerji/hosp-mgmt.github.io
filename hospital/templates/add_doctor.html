@@ -1,0 +1,33 @@
+<!--by Abhinav Mukerji(EN18CS301006)-->
+{% include 'base.html' %}
+{% include 'navigation.html' %}
+{% block content %}
+
+{% ifequal error "no" %}
+<script>
+	alert('Record Saved!');
+	window.location="{% url 'view_doctor' %}";
+</script>
+{% endifequal %}
+
+{% ifequal error "yes" %}
+<script>
+	alert('Invalid login or Captcha not checked!');
+</script>
+{% endifequal %}
+<div class="container">
+	<h2 class="text-center"><div class="shadow-lg p-3 mb-5 bg-body rounded"><b>Add Doctor</b> <i class="fas fa-plus-square"></i></div></h2>
+	<form method="POST">
+		{% csrf_token %}
+		<label><b>Doctor Name</b></label>
+		<input type="text" class="form-control" name="uname" />
+		<label><b>Mobile</b></label>
+		<input type="text" class="form-control" name="mobile" />
+		<label><b>Speciality</b></label>
+		<input type="text" class="form-control" name="special" />
+		<br>
+		<input type="submit" value="submit" class="form-control btn btn-primary">
+	<form>
+</div>
+
+{% endblock content %}

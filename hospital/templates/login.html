@@ -1,0 +1,39 @@
+<!--by Abhinav Mukerji(EN18CS301006)-->
+{% include 'base.html' %}
+{% include 'navigation.html' %}
+
+{% block content %}
+
+{% ifequal error "no" %}
+<script>
+	alert('Logged in Successfully!');
+	window.location="{% url 'home' %}";
+</script>
+{% endifequal %}
+
+{% ifequal error "yes" %}
+<script>
+	alert('Invalid login or Captcha not checked!');
+</script>
+{% endifequal %}
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<div class="bg-image" style=" background-image: url('https://source.unsplash.com/1600x1000/?medical,doctors');
+height: 100vh; ">
+ <div class="container">
+	 <h2 class="text-center">Admin Login</h2>
+	 <form method="POST">
+		 {% csrf_token %}
+		 <label>Admin Name</label>
+		 <input type="text" class="form-control" name="uname">
+		 <label>Password</label>
+		 <input type="password" class="form-control" name="pwd">
+		 <br>
+		 <div class="g-recaptcha" data-sitekey="6LenSZEaAAAAAF0VO935yV2MobD1fIj-eisHsXFi"></div>
+		 <br>
+		 <input type="submit" value="login" class="form-control btn btn-primary">
+	 <form>
+ </div>
+
+{% endblock content %}
+</div>
+<footer class="text-center py-4 text-light bg-dark"> Copyright &copy Abhinav Mukerji </footer>
